@@ -1,16 +1,30 @@
 {
-  "name": "project",
+  "name": "wangyiyun",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd-mobile": "^2.2.11",
+    "babel-plugin-import": "^1.11.0",
+    "fastclick": "^1.0.6",
+    "http-proxy-middleware": "^0.19.1",
     "react": "^16.8.6",
+    "react-app-rewired": "^2.1.1",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "react-hot-loader": "^4.8.2",
+    "react-native": "^0.59.3",
+    "react-redux": "^6.0.1",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "react-transition-group": "^2.9.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -21,5 +35,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "better-scroll": "^1.15.1",
+    "react-sticky": "^6.0.3"
+  }
 }
