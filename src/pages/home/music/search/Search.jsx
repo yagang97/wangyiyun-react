@@ -29,12 +29,13 @@ export default class Search extends Component {
     async componentDidMount() {
         let result = await http.get("/api/search/hot")
         this.setState({ data: result.result.hots })
-
+ 
         new BScroll("#searchSroll",{
             click:true,
             probeType: 2,
             bounce:true,
         })
+
     }
 
     change(e){
@@ -141,7 +142,7 @@ export default class Search extends Component {
                  {searchResult}
                 </div>
                 </div>
-            </SearchContainer>
+            </SearchContainer> || <div id="searchSroll"></div>//处理数据开渲染的时候better-scroll报错问题
         )
     }
 }

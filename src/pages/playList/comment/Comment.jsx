@@ -40,12 +40,9 @@ class Comment extends Component {
         let comments = this.props.comments
         let musicComments = this.props.musicComments
         let musicHotComments = this.props.musicHotComments
-        console.log(hotComments,comments,3)
-        console.log(musicComments,musicHotComments,4)
 
         let commentsData,musicCommentsData
         if(musicHotComments.length > 0 || musicComments > 0){
-            console.log(1)
             musicCommentsData = (
                 <>
                 {
@@ -105,7 +102,6 @@ class Comment extends Component {
                 </>
             )
         }else{
-            console.log(2)
             musicCommentsData = (
                 <>
                 {

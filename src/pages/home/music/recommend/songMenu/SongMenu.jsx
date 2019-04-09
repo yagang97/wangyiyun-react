@@ -17,7 +17,7 @@ class SongMenu extends Component {
         }
     }
 
-    async componentDidMount() {
+    async componentWillMount(){
         let result = await http.get("/api/personalized")
         this.setState({
             data: result.result.slice(0, 6),
@@ -30,7 +30,16 @@ class SongMenu extends Component {
                 songData:songResult.playlists
             })
         }
+
     }
+
+
+    componentWillUnmount = () => {//解决setstate内存泄漏问题
+        this.setState = (state,callback)=>{
+          return;
+        };
+    }
+
 
     render() {
         // console.log(this.state.data,this.state.songData)

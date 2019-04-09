@@ -8,18 +8,22 @@ import BackPage from "components/fixed/BackPage"
 import BScroll from "better-scroll"
 import SongMenu from "music/recommend/songMenu/SongMenu"
 import Comment from "pages/playList/comment/Comment"
+import BackTop from "components/fixed/BackTop"
 
 class PlaySong extends Component {
     constructor(props){
       super(props)
       this.state={
-        
+        show:false
       }
-    }
+    } 
 
     clickHandler(){
-      console.log(1)
       this.bScroll.scrollTo(0,-670)
+    }
+
+    backTop(){
+      this.bScroll.scrollTo(0, 0)
     }
 
     componentDidMount(){
@@ -30,15 +34,22 @@ class PlaySong extends Component {
       })
  
       this.bScroll.on("scroll",(e) => {
-        this.setState({
-          scrollY:e.y
-        })
+        e.y < -300 ?  this.setState({show:true}) : this.setState({show:false})
       })
+
     }
+
+    componentWillUnmount = () => {//解决setstate内存泄漏问题
+      this.setState = (state,callback)=>{
+        return;
+      };
+    }
+  
 
     render() {
       return (
         <PlaySongContainer>
+          {this.state.show && <BackTop onClick={this.backTop.bind(this)}></BackTop>}
           <BackPage></BackPage>
             <div className="songBg"></div>
             <PlaySongMain  id="playSong" style={{"transform":this.state.transform ,"transitionDuration": "300ms"}}>

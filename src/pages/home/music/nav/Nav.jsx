@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Recommend from "music/recommend/Recommend"
 import Search from "music/search/Search"
 import HotSong from "music/hotSong/HotSong"
-import { CSSTransition,TransitionGroup} from 'react-transition-group';
+// import { CSSTransition,TransitionGroup} from 'react-transition-group';
 
 
 import {
@@ -36,12 +36,12 @@ class Nav extends Component {
                         exitActive:"animated fadeOut"
                     }}
                     >  */}
-                        <Switch>
-                            <Redirect from="/" to="/recommend" exact ></Redirect>
-                            <Route   path="/recommend" component={Recommend}></Route>
-                            <Route   path="/hotSong" component={HotSong}></Route>
-                            <Route   exact path="/search" component={Search}></Route>
-                        </Switch>
+                    <Switch>
+                        <Redirect from="/" to="/recommend" exact ></Redirect>
+                        <Route   path="/recommend" component={Recommend}></Route>
+                        <Route   path="/hotSong" component={HotSong}></Route>
+                        <Route   exact path="/search" component={Search}></Route>
+                    </Switch>
                     {/* </CSSTransition>
                 </TransitionGroup> */}
             </main>

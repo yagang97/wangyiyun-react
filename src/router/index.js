@@ -14,7 +14,6 @@ export default class Index extends Component{
       <Switch>
         <Route exact path="/playList/:id" component={PlayList}></Route>
         <Route exact path="/playSong/:id" component={PlaySong}></Route>
-        {/* <Route exact path="/searchResult" component={PlaySong}></Route> */}
         <Route path="/" component={Home}></Route>
       </Switch>
     )

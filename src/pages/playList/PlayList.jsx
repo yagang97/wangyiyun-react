@@ -57,16 +57,22 @@ class PlayList extends Component {
        
      }
 
+     componentWillUnmount = () => {//解决setstate内存泄漏问题
+        this.setState = (state,callback)=>{
+          return;
+        };
+    }
+
 
     render() {
         let data=this.props.playList
         return (
             <div style={{"height":"100%"}}>
             <BackPage></BackPage>
+            {/* &&运算符，先判断前面的boolen值，如果是true的话，然后会在判断后面的boolen值。如果是false的话，不会再判断后面的boolen值。从而实现显示隐藏的效果 */}
             {this.state.show && <BackTop onClick={this.clickHandler.bind(this)}></BackTop>}
             <Collect></Collect>
              <div id="palyScroll" style={{"height":"100%"}}>
-             {/*   onTouchMove={e => this.move(e)} */}
                 <PlayListContainer>
                     <PlayListTitle img={data.coverImgUrl}>
                         <div className="playTitle">
